@@ -2,6 +2,25 @@
 
 A ruby library for the Zinc API.
 
+## Usage
+
+#### Set the client token for auth
+> Zinc.client_token = <ZINC_CLIENT_TOKEN>
+
+#### Interact with the Orders API
+> Zinc::Order.get(<ZINC_ORDER_ID>)
+> Zinc::Order.abort(<ZINC_ORDER_ID>)
+> Zinc::Order.retry(<ZINC_ORDER_ID>)
+> Zinc::Order.create(options)
+
+...or Products APIs
+> Zinc::Product.get_details(<ASIN>)  
+> Zinc::Product.offers(<ASIN>)
+
+----
+----
+----
+
 TODO: Delete this and the text below, and describe your gem
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zinc`. To experiment with that code, run `bin/console` for an interactive prompt.
@@ -18,9 +37,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
