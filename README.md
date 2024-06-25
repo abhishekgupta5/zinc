@@ -8,15 +8,26 @@ A ruby library for the Zinc API.
 > Zinc.client_token = <ZINC_CLIENT_TOKEN>
 
 #### Interact with the Orders API
-> Zinc::Order.get(<ZINC_ORDER_ID>)
-> Zinc::Order.abort(<ZINC_ORDER_ID>)
-> Zinc::Order.retry(<ZINC_ORDER_ID>)
-> Zinc::Order.create(options)
 
+```ruby
+Zinc::Order.get(<ZINC_ORDER_ID>)
+```
+```ruby
+Zinc::Order.abort(<ZINC_ORDER_ID>)
+```
+```ruby
+Zinc::Order.retry(<ZINC_ORDER_ID>)
+```
+```ruby
+Zinc::Order.create(options)
+```
 ...or Products APIs
-> Zinc::Product.get_details(<ASIN>)  
-> Zinc::Product.offers(<ASIN>)
-
+```ruby
+Zinc::Product.get_details(<PRODUCT_ASIN>)  
+```
+```ruby
+Zinc::Product.offers(<PRODUCT_ASIN>)
+```
 ----
 ----
 ----
