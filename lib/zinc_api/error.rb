@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Zinc
+module ZincApi
   class Error < StandardError
     attr_reader :response
 
