@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Zinc
+module ZincApi
   class Order
     class << self
       def retrieve(order_id)

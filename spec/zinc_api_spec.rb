@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Zinc do
+RSpec.describe ZincApi do
   it "has a version number" do
-    expect(Zinc::VERSION).not_to be nil
+    expect(ZincApi::VERSION).not_to be nil
   end
 
   it "does something useful" do

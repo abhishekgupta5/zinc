@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'error'
+require_relative "error"
 
-module Zinc
+module ZincApi
   class Client
     include HTTParty
     base_uri "https://api.zinc.io/v1"
@@ -19,7 +19,7 @@ module Zinc
       private
 
       def request(method, path, options)
-        options[:basic_auth] = { username: Zinc.client_token, password: "" }
+        options[:basic_auth] = { username: ZincApi.client_token, password: "" }
         response = HTTParty.send(method, "#{self.base_uri}/#{path}", options)
         handle_response(response)
       end
@@ -31,7 +31,7 @@ module Zinc
         when 200..299
           response.parsed_response
         else
-          raise Zinc::Error.new(response)
+          raise ZincApi::Error.new(response)
         end
       end
     end

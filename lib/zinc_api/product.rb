@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Zinc
+module ZincApi
   class Product
     class << self
       def get_details(asin, params = {})

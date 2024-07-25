@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/zinc/version"
+require_relative "lib/zinc_api/version"
 
 Gem::Specification.new do |spec|
   spec.name = "zinc"
-  spec.version = Zinc::VERSION
+  spec.version = ZincApi::VERSION
   spec.authors = ["Abhishek"]
   spec.email = ["zenofabhishek@gmail.com"]
 
