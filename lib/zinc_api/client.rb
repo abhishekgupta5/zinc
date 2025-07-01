@@ -28,8 +28,8 @@ module ZincApi
         begin
           log_message(:info, "Client", "Requesting #{method.upcase} #{path}")
           response = HTTParty.send(method, "#{self.base_uri}/#{path}", options)
-          log_message(:info, "Client", "Response status: #{response.code}")
           parsed_response = response.parsed_response
+          log_message(:info, "Client", "Response status: #{response.code}, parsed_response: #{parsed_response}")
           if successful_response?(response, parsed_response)
             log_message(:info, "Client", "Successful response")
             parsed_response
