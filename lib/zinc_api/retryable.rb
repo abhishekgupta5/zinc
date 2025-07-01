@@ -26,9 +26,14 @@ module ZincApi
           retry
         else
           log_message(:error, "Retryable", "All #{max_attempts} attempts failed. Last error: #{e.class} - #{e.message}")
-          # If we've exhausted all retries, return the last result if we have one
-          # or re-raise the error if we don't
-          last_result || raise(e)
+          # If we've exhausted all retries, check for outage condition first
+          if e.response['code'] == 'internal_error' && e.response['message']&.include?('outages')
+            log_message(:warn, "Retryable", "Detected Zinc outage, returning ZINC_DOWN")
+            return { 'status' => "ZINC_DOWN" }
+          end
+          # Otherwise return the last result if we have one
+          # or return response.parsed_response or response if available, or re-raise the error
+          last_result || e.response || raise(e)
         end
       end
     end
